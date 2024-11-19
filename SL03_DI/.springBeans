@@ -8,6 +8,7 @@
 	<enableImports><![CDATA[true]]></enableImports>
 	<configs>
 		<config>src/main/java/org/doit/ik/di/application-context.xml</config>
+		<config>src/main/java/org/doit/ik/di4/application-context4.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
