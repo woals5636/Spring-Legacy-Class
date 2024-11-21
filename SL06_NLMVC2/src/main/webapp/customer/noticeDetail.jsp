@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<title>index</title>
 		<link href="../css/customer.css" type="text/css" rel="stylesheet" />
@@ -122,15 +126,14 @@
 						</dl>
 
 						<div class="article-content" >
-							<img src="http://sstatic.naver.net/keypage/outside/info/2011031017145546407.jpg" /><br />
-								${ notice.content }
-
+							<c:out value=" ${ notice.content }"></c:out>
 						</div>
 					</div>
 					<p class="article-comment margin-small">
 						<a class="btn-list button" href="notice.htm">목록</a>						
-						<a class="btn-edit button" href="noticeEdit.htm">수정</a>
-						<a class="btn-del button" href="noticeDel.htm">삭제</a>
+						<a class="btn-edit button" href="noticeEdit.htm?seq=${ notice.seq }">수정</a>
+						<a class="btn-del button" href="noticeDel.htm?seq=${ notice.seq }">삭제</a>
+
 					</p>
 					<div class="margin-small" style="border-top: 1px solid #dfdfdf;">
 						<dl class="article-detail-row">
@@ -202,4 +205,15 @@
 			</div>
 		</div>
 	</body>
+	
+	<script>
+	$("a.btn-del.button").on("click", function(event) {
+		if (confirm("정말 삭제하시겠습니까?")) {
+			} else {
+				event.preventDefault();
+				}
+	});
+	</script>
+	
+	
 </html>

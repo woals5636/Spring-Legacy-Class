@@ -1,0 +1,21 @@
+[수업내용정리]
+
+1. webapp
+	ㄴ cmr 폴더
+		ㄴ upload 파일 추가		요청 URL
+		
+2. views
+	ㄴ cmr 폴더
+		ㄴ upload.jsp 파일 추가
+
+3. org.doit.ik
+	ㄴ CmrUploadController.java ( HomeController.java 복사 )
+	
+4. servlet-context.xml
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="-1"></beans:property>
+		<beans:property name="maxInMemorySize" value="10240"></beans:property>
+		<beans:property name="defaultEncoding" value="UTF-8"></beans:property>
+	</beans:bean>
+	
+5. upload.jsp

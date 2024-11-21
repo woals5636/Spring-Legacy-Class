@@ -106,6 +106,8 @@
 							<input class="btn-save button" type="submit" value="저장" />
 							<a class="btn-cancel button" href="notice.jsp">취소</a>						
 						</p>
+						
+						<input type="hidden" name="${ _csrf.parameterName }" value="${ _csrf.token }">
 					</form>							
 				</div>				
 				<div id="navi">

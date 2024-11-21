@@ -84,7 +84,7 @@
 								제목
 							</dt>
 							<dd class="article-detail-data">
-								&nbsp;<input name="title" value="제 12회 창업스쿨 " />
+								&nbsp;<input name="title" value="${ notice.title }" />
 							</dd>
 						</dl>	
 						<dl class="article-detail-row half-row">
@@ -92,7 +92,7 @@
 								작성자
 							</dt>
 							<dd class="article-detail-data half-data" >
-								뉴렉
+								${ notice.writer }
 							</dd>
 						</dl>
 						<dl class="article-detail-row half-row">
@@ -100,7 +100,7 @@
 								조회수
 							</dt>
 							<dd class="article-detail-data half-data">
-								1235
+								${ notice.hit }
 							</dd>
 						</dl>
 						<dl class="article-detail-row">
@@ -113,14 +113,19 @@
 						</dl>
 
 						<div class="article-content" >
-							<textarea id="txtContent" class="txtContent" name="content"><img src="http://sstatic.naver.net/keypage/outside/info/2011031017145546407.jpg" /><br />동해물과 백두산이 마르고 닳도록
-							</textarea>
+							<textarea id="txtContent" class="txtContent" name="content">${ notice.content }</textarea>
 						</div>						
 					</div>
 					<p class="article-comment margin-small">
-						<a class="btn-save button" href="noticeEditProc.jsp">수정</a>
-						<a class="btn-cancel button" href="noticeDetail.jsp">취소</a>						
+						<!-- <a class="btn-save button" href="noticeEditProc.jsp">수정</a> -->
+						<!-- http://localhost/customer/noticeDetail.htm?seq=4 -->
+						<input type="submit" value="수정" class="btn-save button"/>
+						<!-- 현재페이지 번호,검색조건,검색어, 등등... -->
+						<a class="btn-cancel button" href="noticeDetail.htm">취소</a>						
 					</p>		
+					
+					<input type="hidden" name="${ _csrf.parameterName }" value="${ _csrf.token }">
+					
 					</form>					
 				</div>				
 				<div id="navi">
