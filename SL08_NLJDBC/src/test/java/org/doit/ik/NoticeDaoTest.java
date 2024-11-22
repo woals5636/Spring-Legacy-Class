@@ -7,13 +7,20 @@ import java.sql.SQLException;
 import org.doit.ik.domain.NoticeVO;
 import org.doit.ik.persistence.NoticeDao;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 class NoticeDaoTest {
-
+   
+   @Autowired
+   private JdbcTemplate jdbcTemplate;
+   
 	@Test
 	void testNoticeInsert() {
 		// System.out.println("Hello World");
-		NoticeDao noticeDao = new NoticeDao();
+		NoticeDao noticeDao = new NoticeDao(jdbcTemplate);
 		NoticeVO notice = new NoticeVO();
 		notice.setTitle("첫번째 게시글");
 		notice.setContent("첫번째 게시글");
