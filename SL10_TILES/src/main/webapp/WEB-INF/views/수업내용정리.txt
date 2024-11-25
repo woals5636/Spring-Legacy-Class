@@ -1,0 +1,91 @@
+[수업내용정리]
+
+1. 스프링		+ 타일즈(tiles)
+	ㄴ 페이지 모듈화(집중화)
+	ㄴ 공통적인 부분(헤더, 풋터, 사이드 메뉴 등등)
+	
+2. resources 폴더
+	ㄴ w3ss
+		ㄴ css
+			ㄴ flexbox.css
+			
+3. webapp
+	ㄴ w3ss_layout_flexbox.jsp
+	
+4.
+● pom.xml 의존 모듈 추가
+  <!-- 7. Tiles -->
+  <dependency>
+       <groupId>org.apache.tiles</groupId>
+       <artifactId>tiles-extras</artifactId>
+       <version>${org.apache.tiles-version}</version>
+     </dependency>
+     <dependency>
+        <groupId>org.apache.tiles</groupId>
+        <artifactId>tiles-core</artifactId>
+        <version>${org.apache.tiles-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tiles</groupId>
+        <artifactId>tiles-servlet</artifactId>
+        <version>${org.apache.tiles-version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.tiles</groupId>
+        <artifactId>tiles-jsp</artifactId>
+        <version>${org.apache.tiles-version}</version>
+      </dependency>
+</dependencies>
+
+● servlet-context.xml 주석처리
+
+<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+<!--
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<beans:property name="prefix" value="/WEB-INF/views/" />
+	<beans:property name="suffix" value=".jsp" />
+</beans:bean>
+ -->
+
+5. WEB-INF
+	ㄴ tiles
+		ㄴ tiles.xml 파일추가
+		
+6. 페이지 모듈화
+  views 폴더  
+    ㄴ layout 폴더 추가
+        ㄴ header.jsp   ***
+        ㄴ footer.jsp   ***
+        ㄴ template.jsp ***
+        
+    ㄴ city 폴더 추가
+        ㄴ london.jsp  ***
+        ㄴ paris.jsp
+        ㄴ seoul.jsp
+        ㄴ layout 폴더 추가
+           ㄴ nav.jsp  ***
+           ㄴ template.jsp ***
+		
+w3ss_layout_flexbox.jsp 복사해서 template.jsp 에 붙여넣기
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

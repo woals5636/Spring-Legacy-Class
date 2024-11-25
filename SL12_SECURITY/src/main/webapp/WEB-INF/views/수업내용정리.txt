@@ -1,0 +1,25 @@
+[수업내용정리]
+
+폴더 생성
+webapp
+   ㄴ inc
+       ㄴ header.jsp
+       ㄴ footer.jsp
+       ㄴ layout.jsp
+   ㄴ customer
+       ㄴ inc
+           ㄴ aside.jsp
+           ㄴ layout.jsp
+           ㄴ visual.jsp
+   ㄴ joinus
+       ㄴ inc
+           ㄴ aside.jsp
+           ㄴ layout.jsp
+           ㄴ visual.jsp
+
+모든 jsp 페이지를 외부에서 바로 접근 X
+=> WEB-INF
+	ㄴ views 폴더
+		ㄴ 이동..
+
+	기존 폴더에 존재하는 jsp 파일 모두 삭제
